@@ -1,0 +1,18 @@
+.page-header
+  %h1
+    Teams
+    .pull-right
+      = link_to t('new').html_safe, new_team_path, :class => 'btn btn-primary'
+
+%table#teams.table.table-bordered.table-striped.dataTable{:data => {:source => teams_url(:format => 'json')}}
+  %thead
+    %tr
+    %th Name
+    %th
+  %tbody
+    - teams.each do |team|
+      %tr
+      %td= team.name
+      %td
+        = link_to raw(t('edit')), edit_team_path(team), :class => 'btn btn-xs'
+        = link_to raw(t('destroy')), team, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-xs btn-danger'

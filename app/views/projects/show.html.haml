@@ -1,0 +1,12 @@
+.page-header
+  %h1
+    = project.name
+    .pull-right
+      = link_to raw(t('edit')), [:edit, project], :class => 'btn btn-primary'
+      = link_to raw(t('back',to: "Projects")), projects_path, :class => 'btn btn-default'
+%dl
+  %dt Start date:
+  %dd= project.start_date
+  %dt End date:
+  %dd= project.end_date
+

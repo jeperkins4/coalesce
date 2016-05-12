@@ -1,0 +1,9 @@
+.page-header
+  %h1
+    Edit Team
+    .pull-right
+      = link_to 'Show', team, class: 'btn btn-default'
+      = link_to t('back',to: "Teams").html_safe, teams_path, class: 'btn btn-default'
+= render 'form'
+
+

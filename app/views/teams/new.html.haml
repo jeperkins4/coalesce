@@ -1,0 +1,7 @@
+.page-header
+  %h1
+    New Team
+    .pull-right
+      = link_to t('back',to: "Teams").html_safe, teams_path, :class => 'btn btn-default'
+= render 'form'
+
