@@ -12,13 +12,14 @@
   / /.row
   / Project One
   - projects.each do |project|
+    - sample = project.documents.sample
     .row
       .col-md-7
         %a{:href => "#"}
-          %img.img-responsive{:alt => "", :src => "http://placehold.it/700x300"}/
+          %img.img-responsive{:alt => "", :src => sample.media.download_url(sample.media), width: 700, height: 300}/
       .col-md-5
         %h3= project.name
-        %h4 Subheading
+        %h4= project.summary
         %p= project.description
         = link_to project, class: 'btn btn-primary' do
           View Project

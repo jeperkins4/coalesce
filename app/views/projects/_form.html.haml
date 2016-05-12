@@ -3,8 +3,15 @@
 
   .form-inputs
     = f.input :name
+    = f.input :summary
     = f.input :start_date, as: :string, input_html: { class: 'datepicker' }
     = f.input :end_date, as: :string, input_html: { class: 'datepicker' }
+
+    #documents
+      = f.simple_fields_for :documents do |doc|
+        = render 'document_fields', f: doc
+    .pull-right
+      = link_to_add_association t('add_document').html_safe, f, :documents, class: 'btn btn-primary'
 
   .form-actions
     = f.button :submit
