@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :teams do
     member do
       put 'join'
+      put 'leave'
     end
   end
   resources :projects

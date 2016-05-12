@@ -42,10 +42,23 @@ class TeamsController < ApplicationController
 
   def join
     team.users << current_user
-    if team.save
-      format.html { redirect_to team, notice: "#{current_user.name} was successfully added to #{team.name}" }
-    else
-      format.html { redirect_to team }
+    respond_to do |format|
+      if team.save
+        format.html { redirect_to team, notice: "#{current_user.name} was successfully added to #{team.name}" }
+      else
+        format.html { redirect_to team }
+      end
+    end
+  end
+
+  def leave
+    team.users.delete(current_user)
+    respond_to do |format|
+      if team.save
+        format.html { redirect_to team, notice: "#{current_user.name} was successfully added to #{team.name}" }
+      else
+        format.html { redirect_to team }
+      end
     end
   end
 

@@ -4,9 +4,23 @@
     .pull-right
       = link_to raw(t('edit')), [:edit, team], :class => 'btn btn-primary'
       = link_to raw(t('back',to: "Teams")), teams_path, :class => 'btn btn-default'
-%dl
-  %dt Name:
-  %dd= team.name
-  %dt Projects:
-  %dd= team.projects.pluck(:name).join(', ')
+.row
+  .col-md-8
+    %dl
+      %dt Name:
+      %dd= team.name
+      %dt Projects:
+      %dd= team.projects.pluck(:name).join(', ')
+  .col-md-4
+    .panel.panel-info
+      .panel-heading Members
+      .panel-body
+        %ul
+          - team.users.each do |user|
+            %li
+              = link_to user.name, '#'
+              .pull-right
+                = link_to t('leave').html_safe, [:leave, team], method: :put, class: 'btn btn-danger btn-xs'
+      .panel-footer
+        = link_to t('join_team').html_safe, [:join, team], method: :put, class: 'btn btn-default btn-block'
 
