@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :teams do
-    members do
+    member do
       put 'join'
     end
   end
