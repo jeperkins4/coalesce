@@ -9,8 +9,9 @@
   - sample = project.documents.sample
   .row
     .col-md-7
-      %a{:href => "#"}
-        = project_image_link(sample)
+      - unless sample.nil?
+        %a{:href => "#"}
+          = project_image_link(sample)
     .col-md-5
       %h3= project.name
       %h4= project.summary
