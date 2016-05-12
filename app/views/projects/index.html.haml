@@ -2,7 +2,7 @@
   %h1
     Projects
     .pull-right
-      = link_to t('new').html_safe, new_project_path, :class => 'btn btn-primary'
+      = link_to t('new', model_name: 'Project').html_safe, new_project_path, :class => 'btn btn-primary'
 
 %table#projects.table.table-bordered.table-striped.dataTable{:data => {:source => projects_url(:format => 'json')}}
   %thead

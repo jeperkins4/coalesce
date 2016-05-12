@@ -2,7 +2,7 @@
   %h1
     Teams
     .pull-right
-      = link_to t('new').html_safe, new_team_path, :class => 'btn btn-primary'
+      = link_to t('new', model_name: 'Team').html_safe, new_team_path, :class => 'btn btn-primary'
 
 %table#teams.table.table-bordered.table-striped.dataTable{:data => {:source => teams_url(:format => 'json')}}
   %thead

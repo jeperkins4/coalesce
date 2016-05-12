@@ -1,111 +1,108 @@
-/ Page Content
-.container
-  / Page Heading
+/ Page Heading
+.row
+  .col-lg-12
+    = link_to t('new_project').html_safe, new_project_path, class: 'btn btn-block btn-primary'
+    %br
+/ /.row
+/ Project One
+- projects.each do |project|
+  - sample = project.documents.sample
   .row
-    .col-lg-12
-      %h1
-        .page-header
-          Page Heading
-          %small Secondary Text
-          .pull_right
-            = link_to t('new_project').html_safe, new_project_path, class: 'btn btn-primary'
-  / /.row
-  / Project One
-  - projects.each do |project|
-    - sample = project.documents.sample
-    .row
-      .col-md-7
-        %a{:href => "#"}
-          %img.img-responsive{:alt => "", :src => sample.media.download_url(sample.media), width: 700, height: 300}/
-      .col-md-5
-        %h3= project.name
-        %h4= project.summary
-        %p= project.description
-        = link_to project, class: 'btn btn-primary' do
-          View Project
-          %span.glyphicon.glyphicon-chevron-right
+    .col-md-7
+      %a{:href => "#"}
+        %img.img-responsive{:alt => "", :src => sample.media.download_url(sample.media), width: 700, height: 300}/
+    .col-md-5
+      %h3= project.name
+      %h4= project.summary
+      %p= project.description
+      = link_to project, class: 'btn btn-primary' do
+        View Project
+        %span.glyphicon.glyphicon-chevron-right
+      %h5 Teams:
+      - project.teams.each do |team|
+        = link_to team.name, team, class: 'btn btn-xs btn-success'
 
-    / /.row
-  %hr/
-  / Project Two
-  .row
-    .col-md-7
-      %a{:href => "#"}
-        %img.img-responsive{:alt => "", :src => "http://placehold.it/700x300"}/
-    .col-md-5
-      %h3 Project Two
-      %h4 Subheading
-      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.
-      %a.btn.btn-primary{:href => "#"}
-        View Project
-        %span.glyphicon.glyphicon-chevron-right
   / /.row
-  %hr/
-  / Project Three
+%hr/
+/ Project Two
+.row
+  .col-md-7
+    %a{:href => "#"}
+      %img.img-responsive{:alt => "", :src => "http://placehold.it/700x300"}/
+  .col-md-5
+    %h3 Project Two
+    %h4 Subheading
+    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.
+    %a.btn.btn-primary{:href => "#"}
+      View Project
+      %span.glyphicon.glyphicon-chevron-right
+/ /.row
+%hr/
+/ Project Three
+.row
+  .col-md-7
+    %a{:href => "#"}
+      %img.img-responsive{:alt => "", :src => "http://placehold.it/700x300"}/
+  .col-md-5
+    %h3 Project Three
+    %h4 Subheading
+    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!
+    %a.btn.btn-primary{:href => "#"}
+      View Project
+      %span.glyphicon.glyphicon-chevron-right
+/ /.row
+%hr/
+/ Project Four
+.row
+  .col-md-7
+    %a{:href => "#"}
+      %img.img-responsive{:alt => "", :src => "http://placehold.it/700x300"}/
+  .col-md-5
+    %h3 Project Four
+    %h4 Subheading
+    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?
+    %a.btn.btn-primary{:href => "#"}
+      View Project
+      %span.glyphicon.glyphicon-chevron-right
+/ /.row
+%hr/
+/ Project Five
+.row
+  .col-md-7
+    %a{:href => "#"}
+      %img.img-responsive{:alt => "", :src => "http://placehold.it/700x300"}/
+  .col-md-5
+    %h3 Project Five
+    %h4 Subheading
+    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident ex quisquam hic odio repellendus atque porro distinctio quae id laboriosam facilis dolorum.
+    %a.btn.btn-primary{:href => "#"}
+      View Project
+      %span.glyphicon.glyphicon-chevron-right
+/ /.row
+%hr/
+/ Pagination
+.row.text-center
+  .col-lg-12
+    %ul.pagination
+      %li
+        %a{:href => "#"} «
+      %li.active
+        %a{:href => "#"} 1
+      %li
+        %a{:href => "#"} 2
+      %li
+        %a{:href => "#"} 3
+      %li
+        %a{:href => "#"} 4
+      %li
+        %a{:href => "#"} 5
+      %li
+        %a{:href => "#"} »
+/ /.row
+%hr/
+/ Footer
+%footer
   .row
-    .col-md-7
-      %a{:href => "#"}
-        %img.img-responsive{:alt => "", :src => "http://placehold.it/700x300"}/
-    .col-md-5
-      %h3 Project Three
-      %h4 Subheading
-      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!
-      %a.btn.btn-primary{:href => "#"}
-        View Project
-        %span.glyphicon.glyphicon-chevron-right
-  / /.row
-  %hr/
-  / Project Four
-  .row
-    .col-md-7
-      %a{:href => "#"}
-        %img.img-responsive{:alt => "", :src => "http://placehold.it/700x300"}/
-    .col-md-5
-      %h3 Project Four
-      %h4 Subheading
-      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?
-      %a.btn.btn-primary{:href => "#"}
-        View Project
-        %span.glyphicon.glyphicon-chevron-right
-  / /.row
-  %hr/
-  / Project Five
-  .row
-    .col-md-7
-      %a{:href => "#"}
-        %img.img-responsive{:alt => "", :src => "http://placehold.it/700x300"}/
-    .col-md-5
-      %h3 Project Five
-      %h4 Subheading
-      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident ex quisquam hic odio repellendus atque porro distinctio quae id laboriosam facilis dolorum.
-      %a.btn.btn-primary{:href => "#"}
-        View Project
-        %span.glyphicon.glyphicon-chevron-right
-  / /.row
-  %hr/
-  / Pagination
-  .row.text-center
     .col-lg-12
-      %ul.pagination
-        %li
-          %a{:href => "#"} «
-        %li.active
-          %a{:href => "#"} 1
-        %li
-          %a{:href => "#"} 2
-        %li
-          %a{:href => "#"} 3
-        %li
-          %a{:href => "#"} 4
-        %li
-          %a{:href => "#"} 5
-        %li
-          %a{:href => "#"} »
+      %p Copyright © Your Website 2014
   / /.row
-  %hr/
-  / Footer
-  %footer
-    .row
-      .col-lg-12
-        %p Copyright © Your Website 2014
-    / /.row

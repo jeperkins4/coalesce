@@ -54,3 +54,4 @@ en:
   search: "<i class='fa fa-search'></i> Search"
   location: "<i class='fa fa-map-marker'></i>"
   down: "<i class='fa fa-chevron-circle-down'></i>"
+  new_project: "Start a New Project"

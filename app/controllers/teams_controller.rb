@@ -40,6 +40,15 @@ class TeamsController < ApplicationController
     end
   end
 
+  def join
+    team.users << current_user
+    if team.save
+      format.html { redirect_to team, notice: "#{current_user.name} was successfully added to #{team.name}" }
+    else
+      format.html { redirect_to team }
+    end
+  end
+
   # DELETE /teams/1
   # DELETE /teams/1.json
   def destroy
@@ -54,6 +63,6 @@ class TeamsController < ApplicationController
   private
     # Only allow a trusted parameter "white list" through.
     def team_params
-      params.require(:team).permit(:name)
+      params.require(:team).permit(:name, :project_ids => [])
     end
 end

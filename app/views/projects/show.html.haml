@@ -5,17 +5,20 @@
       = link_to raw(t('edit')), [:edit, project], :class => 'btn btn-primary'
       = link_to raw(t('back',to: "Projects")), projects_path, :class => 'btn btn-default'
 .row
-  .col-md-6
+  .col-md-5
     - project.documents.each do |document|
       - if document.media.content_type == 'image/jpeg'
         %img.thumbnail{src: document.media.download_url(document.media), alt: document.name}
       - else
         = link_to document.name, document.media.download_url(document.media)
-%dl
-  %dt Summary:
-  %dd= project.summary
-  %dt Start date:
-  %dd= project.start_date
-  %dt End date:
-  %dd= project.end_date
+  .col-md-7
+    %dl
+      %dt Summary:
+      %dd= project.summary
+      %dt Description:
+      %dd= project.description
+      %dt Start date:
+      %dd= project.start_date
+      %dt End date:
+      %dd= project.end_date
 

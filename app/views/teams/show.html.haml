@@ -7,4 +7,6 @@
 %dl
   %dt Name:
   %dd= team.name
+  %dt Projects:
+  %dd= team.projects.pluck(:name).join(', ')
 
