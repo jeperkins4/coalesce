@@ -10,6 +10,71 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+ *= require dataTables/extras/dataTables.tableTools
+ *= require dataTables/extras/dataTables.responsive
+ *= require bootstrap-datepicker
+ *= require bootstrap-timepicker
+ *= require daterangepicker-bs3
  *= require_tree .
  *= require_self
  */
+$tan: #DCE1D1;
+$grey: #F5F5F5;
+$blue: #4A87B9;
+$beige: #C9C99A;
+$green: #62B60A;
+$grey: #c3c3c3;
+$darkgrey: #999;
+$white: #ffffff;
+$icon-font-path: 'bootstrap/';
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "navbar";
+@import "font-awesome";
+@import "bootstrap-timepicker";
+
+main {
+  margin-top: 55px;
+}
+
+.datepicker {z-index: 1151 !important;}
+
+.map-container {
+  width: 100%;
+  height: 500px;
+}
+#map {
+  width: 100%;
+  height: 500px;
+}
+#map label { width: auto; display:inline; }
+#map img { max-width: none; }
+
+.popover {
+  max-width: 350px;
+}
+.navbar-input-group {
+  @media (min-width: $screen-sm) {
+    font-size: 0px; /*removes whitespace between button and input*/
+
+    input {
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+    .btn {
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-left: 0px;
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    margin-top:0px;
+    margin-bottom:0px;
+
+    .btn {
+      width:100%;
+    }
+  }
+}
