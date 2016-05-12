@@ -10,7 +10,7 @@
   .row
     .col-md-7
       %a{:href => "#"}
-        %img.img-responsive{:alt => "", :src => sample.media.download_url(sample.media), width: 700, height: 300}/
+        = project_image_link(sample)
     .col-md-5
       %h3= project.name
       %h4= project.summary
