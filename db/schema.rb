@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160512192814) do
+ActiveRecord::Schema.define(version: 20160513013601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,9 +21,11 @@ ActiveRecord::Schema.define(version: 20160512192814) do
     t.string   "category"
     t.string   "media"
     t.integer  "project_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.text     "description"
+    t.integer  "file_size"
+    t.string   "content_type"
   end
 
   add_index "documents", ["project_id"], name: "index_documents_on_project_id", using: :btree

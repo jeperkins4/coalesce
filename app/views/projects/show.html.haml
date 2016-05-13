@@ -6,8 +6,8 @@
       = link_to raw(t('back',to: "Projects")), projects_path, :class => 'btn btn-default'
 .row
   .col-md-5
-    - project.documents.each do |document|
-      - if document.media.content_type == 'image/jpeg'
+    - project.documents.images.each do |document|
+      - if document.content_type == 'image/jpeg'
         %img.thumbnail{src: document.media.download_url(document.media), alt: document.name}
       - else
         = link_to document.name, document.media.download_url(document.media)
@@ -21,4 +21,7 @@
       %dd= project.start_date
       %dt End date:
       %dd= project.end_date
+    %ul
+      - project.documents.files.each do |doc|
+        %li= link_to doc.name, doc.media.download_url(doc.media)
 
