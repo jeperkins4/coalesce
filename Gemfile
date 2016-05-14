@@ -40,6 +40,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'aasm'
 gem 'bootstrap-daterangepicker-rails'
 gem "bootstrap-sass"
+gem 'bootstrap-social-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-timepicker-rails-addon', '~> 0.5.1'
 gem 'bootstrap3_autocomplete_input'

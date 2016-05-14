@@ -55,3 +55,9 @@ en:
   location: "<i class='fa fa-map-marker'></i>"
   down: "<i class='fa fa-chevron-circle-down'></i>"
   new_project: "Start a New Project"
+  social:
+    facebook: "<span class='fa fa-facebook'></span> Facebook"
+    twitter: "<span class='fa fa-twitter'></span> Twitter"
+    instagram: "<span class='fa fa-instagram'></span> Instagram"
+    google: "<span class='fa fa-google'></span> Google"
+    pinterest: "<span class='fa fa-pinterest'></span> Pinterest"

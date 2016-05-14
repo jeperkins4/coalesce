@@ -3,3 +3,9 @@
   Name: #{@user.name if @user.name}
 %p
   Email: #{@user.email if @user.email}
+%h5 Identities
+%dl
+  - @user.identities.each do |identity|
+    %dt= identity.provider.titleize
+    %dd
+      %img{src: identity.image}
