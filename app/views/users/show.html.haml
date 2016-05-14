@@ -1,11 +1,25 @@
-%h3 User
-%p
-  Name: #{@user.name if @user.name}
-%p
-  Email: #{@user.email if @user.email}
-%h5 Identities
-%dl
-  - @user.identities.each do |identity|
-    %dt= identity.provider.titleize
-    %dd
-      %img{src: identity.image}
+.row
+  .col-md-6
+    .panel.panel-default
+      .panel-heading
+        %h4 Profile
+      .panel-body
+        %p
+          Name: #{@user.name if @user.name}
+        %p
+          Email: #{@user.email if @user.email}
+  .col-md-6
+    .panel.panel-default
+      .panel-heading
+        %h4 Identities
+      .panel-body
+        - @user.identities.each do |identity|
+          .media
+            .media-left
+              = link_to '#' do
+                %img{src: identity.image, alt: identity.name, width: '48px', height: '48px'}
+            .media-body
+              %h5.media-heading
+                = identity.provider.titleize
+              = identity.name
+              = identity.email
