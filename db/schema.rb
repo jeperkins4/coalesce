@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160513013601) do
+ActiveRecord::Schema.define(version: 20160513153730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,15 +30,41 @@ ActiveRecord::Schema.define(version: 20160513013601) do
 
   add_index "documents", ["project_id"], name: "index_documents_on_project_id", using: :btree
 
+  create_table "identities", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "accesstoken"
+    t.string   "refreshtoken"
+    t.string   "name"
+    t.string   "email"
+    t.string   "nickname"
+    t.string   "image"
+    t.string   "phone"
+    t.string   "urls"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
+
   create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.date     "start_date"
     t.date     "end_date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.string   "status"
     t.text     "description"
     t.string   "summary"
+    t.string   "location"
+    t.string   "city"
+    t.string   "state",       limit: 40
+    t.string   "country",     limit: 40
+    t.string   "postal_code", limit: 20
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.string   "hashtag"
   end
 
   create_table "projects_teams", id: false, force: :cascade do |t|
@@ -114,4 +140,5 @@ ActiveRecord::Schema.define(version: 20160513013601) do
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
 
   add_foreign_key "documents", "projects"
+  add_foreign_key "identities", "users"
 end

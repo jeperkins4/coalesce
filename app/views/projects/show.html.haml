@@ -15,8 +15,14 @@
     %dl
       %dt Summary:
       %dd= project.summary
-      %dt Description:
-      %dd= project.description
+      - unless project.description.blank?
+        %dt Description:
+        %dd= project.description
+      - unless project.location.blank?
+        %dt Location:
+        %dd= project.location
+      %dt Hashtag:
+      %dd= project.hashtag
       %dt Start date:
       %dd= project.start_date
       %dt End date:
