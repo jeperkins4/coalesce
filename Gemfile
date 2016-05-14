@@ -68,6 +68,7 @@ gem 'omniauth-instagram'
 gem 'omniauth-linkedin'
 gem 'omniauth-pinterest'
 gem 'omniauth-twitter'
+gem "omniauth-google-oauth2"
 gem 'pg'
 gem 'puma'
 gem 'rolify'
