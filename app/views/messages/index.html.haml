@@ -7,18 +7,22 @@
 %table#messages.table.table-bordered.table-striped.dataTable{:data => {:source => messages_url(:format => 'json')}}
   %thead
     %tr
-    %th Text
+    %th Posted text
     %th Provider
     %th Nickname
     %th Identity
+    %th Project
+    %th Posted at
     %th
   %tbody
     - messages.each do |message|
       %tr
-      %td= message.text
+      %td= message.posted_text
       %td= message.provider
       %td= message.nickname
       %td= message.identity
+      %td= message.project
+      %td= message.posted_at
       %td
         = link_to raw(t('edit')), edit_message_path(message), :class => 'btn btn-xs'
         = link_to raw(t('destroy')), message, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-xs btn-danger'

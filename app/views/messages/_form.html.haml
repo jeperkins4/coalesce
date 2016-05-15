@@ -2,10 +2,12 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :text
+    = f.input :posted_text
     = f.input :provider
     = f.input :nickname
     = f.association :identity
+    = f.association :project
+    = f.input :posted_at, :as => :string, :input_html => { :class => "datepicker" }
 
   .form-actions
     = f.button :submit
