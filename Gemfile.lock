@@ -117,6 +117,7 @@ GEM
     bootstrap-timepicker-rails-addon (0.5.1)
       railties (>= 3.1, < 5.0)
     bootstrap3_autocomplete_input (0.1.9)
+    buftok (0.2.0)
     builder (3.2.2)
     byebug (9.0.0)
     cancancan (1.13.1)
@@ -159,10 +160,13 @@ GEM
       actionmailer (>= 3.2.6)
       devise (>= 3.2.0)
     diff-lcs (1.2.5)
+    domain_name (0.5.20160310)
+      unf (>= 0.0.5, < 1.0.0)
     dotenv (2.1.1)
     dotenv-rails (2.1.1)
       dotenv (= 2.1.1)
       railties (>= 4.0, < 5.1)
+    equalizer (0.0.10)
     erubis (2.7.0)
     evernote-thrift (1.25.2)
     execjs (2.6.0)
@@ -220,6 +224,15 @@ GEM
       haml (~> 4.0.0)
       nokogiri (~> 1.6.0)
       ruby_parser (~> 3.5)
+    http (1.0.4)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 1.0.1)
+      http_parser.rb (~> 0.6.0)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
+    http-form_data (1.0.1)
+    http_parser.rb (0.6.0)
     hub (1.12.4)
     i18n (0.7.0)
     i18n_data (0.7.0)
@@ -238,6 +251,10 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    koala (2.3.0)
+      addressable
+      faraday
+      multi_json
     launchy (2.4.3)
       addressable (~> 2.3)
     listen (3.1.3)
@@ -264,6 +281,7 @@ GEM
     multi_json (1.12.0)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    naught (1.1.0)
     nenv (0.3.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -414,6 +432,7 @@ GEM
     simple_form (3.2.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
+    simple_oauth (0.3.1)
     slop (3.6.0)
     sort_alphabetical (1.0.2)
       unicode_utils (>= 1.2.2)
@@ -430,11 +449,25 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
+    twitter (5.16.0)
+      addressable (~> 2.3)
+      buftok (~> 0.2.0)
+      equalizer (= 0.0.10)
+      faraday (~> 0.9.0)
+      http (~> 1.0)
+      http_parser.rb (~> 0.6.0)
+      json (~> 1.8)
+      memoizable (~> 0.4.0)
+      naught (~> 1.0)
+      simple_oauth (~> 0.3.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
     underscore-rails (1.8.3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
     unicode-display_width (1.0.5)
     unicode_utils (1.4.0)
     warden (1.2.6)
@@ -489,6 +522,7 @@ DEPENDENCIES
   jquery-datatables-rails!
   jquery-rails
   kaminari
+  koala
   launchy
   mail_view!
   memcachier
@@ -523,6 +557,7 @@ DEPENDENCIES
   spring-commands-rspec
   sprockets
   turbolinks!
+  twitter
   tzinfo-data
   uglifier (>= 1.3.0)
   underscore-rails

@@ -58,6 +58,7 @@ gem 'geocoder'
 gem 'haml-rails'
 gem 'high_voltage'
 gem "kaminari"
+gem "koala"
 gem 'mail_view', github: 'basecamp/mail_view'
 gem 'memoizable'
 gem 'memcachier'
@@ -74,6 +75,7 @@ gem 'puma'
 gem 'rolify'
 gem 'sendgrid'
 gem 'simple_form'
+gem 'twitter'
 gem 'underscore-rails'
 group :development do
   gem 'better_errors'

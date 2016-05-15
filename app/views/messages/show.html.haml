@@ -1,0 +1,16 @@
+.page-header
+  %h1
+    Message
+    .pull-right
+      = link_to raw(t('edit')), [:edit, message], :class => 'btn btn-primary'
+      = link_to raw(t('back',to: "Messages")), messages_path, :class => 'btn btn-default'
+%dl
+  %dt Text:
+  %dd= message.text
+  %dt Provider:
+  %dd= message.provider
+  %dt Nickname:
+  %dd= message.nickname
+  %dt Identity:
+  %dd= message.identity
+

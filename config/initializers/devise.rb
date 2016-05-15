@@ -290,11 +290,11 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :facebook, '1707595822824739', 'd7df37a6a600c384b0559c625e6bac95', scope: 'email', setup: true
-  config.omniauth :twitter, 'JCKxtTZNfa3l7Gms2ak1TZZvu', 'u1d2onf5hiAshNtFuKkUHvmiVFzBr9ZO7ppqlY587LYPF6IESd', setup: true
-  config.omniauth :google_Oauth2, '917488569023-sh1lvc3shf1vpcnud2qq2vll55h8fpl8.apps.googleusercontent.com', '16OGxVPIiqgsrM8pPwxj-I3s', setup: true
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], scope: 'email', setup: true
+  config.omniauth :twitter, ENV['TWITTER_APP_ID'], ENV['TWITTER_APP_SECRET'], setup: true
+  config.omniauth :google_Oauth2, ENV['GOOGLE_OAUTH2_APP_ID'], ENV['GOOGLE_OAUTH2_APP_SECRET'], setup: true
   #config.omniauth :instagram, 'JCKxtTZNfa3l7Gms2ak1TZZvu', 'u1d2onf5hiAshNtFuKkUHvmiVFzBr9ZO7ppqlY587LYPF6IESd', setup: true
-  config.omniauth :pinterest, '4834345550400727517', '0d9d40bfdfe1352b6733c6c693a8c6c1a1f99ed115b516decebe0b392d681de4', setup: true
+  config.omniauth :pinterest, ENV['PINTEREST_APP_ID'], ENV['PINTEREST_APP_SECRET'], setup: true
   #config.omniauth :linked_in
 
   # ==> Warden configuration

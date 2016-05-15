@@ -1,0 +1,24 @@
+.page-header
+  %h1
+    Messages
+    .pull-right
+      = link_to t('new').html_safe, new_message_path, :class => 'btn btn-primary'
+
+%table#messages.table.table-bordered.table-striped.dataTable{:data => {:source => messages_url(:format => 'json')}}
+  %thead
+    %tr
+    %th Text
+    %th Provider
+    %th Nickname
+    %th Identity
+    %th
+  %tbody
+    - messages.each do |message|
+      %tr
+      %td= message.text
+      %td= message.provider
+      %td= message.nickname
+      %td= message.identity
+      %td
+        = link_to raw(t('edit')), edit_message_path(message), :class => 'btn btn-xs'
+        = link_to raw(t('destroy')), message, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-xs btn-danger'

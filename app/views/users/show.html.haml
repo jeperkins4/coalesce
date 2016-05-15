@@ -15,11 +15,11 @@
       .panel-body
         - @user.identities.each do |identity|
           .media
-            .media-left
-              = link_to '#' do
-                %img{src: identity.image, alt: identity.name, width: '48px', height: '48px'}
+            = link_to '#', class: 'media-left' do
+              %img{src: identity.image, alt: identity.name}
             .media-body
               %h5.media-heading
                 = identity.provider.titleize
-              = identity.name
-              = identity.email
+              %dl
+                %dd= identity.name
+                %dd= identity.email
