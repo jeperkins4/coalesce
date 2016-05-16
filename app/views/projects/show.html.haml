@@ -31,7 +31,6 @@
     %ul
       - project.documents.files.each do |doc|
         %li= link_to doc.name, doc.media.download_url(doc.media)
-    %h5 Messages
     %table#messages.table.table-striped.table-responsive
       %thead
         %tr
