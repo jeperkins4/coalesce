@@ -37,8 +37,9 @@
       .panel-heading
         %h5 Social Media Identities
       .panel-body
+        = link_to t('social.evernote').html_safe, user_omniauth_upgrade_path(provider: 'evernote'), class: 'btn btn-block btn-social btn-evernote'
         = link_to t('social.facebook').html_safe, user_omniauth_upgrade_path(provider: 'facebook'), class: 'btn btn-block btn-social btn-facebook'
-        = link_to t('social.twitter').html_safe, user_omniauth_upgrade_path(provider: 'twitter'), class: 'btn btn-block btn-social btn-twitter'
-        = link_to t('social.instagram').html_safe, user_omniauth_upgrade_path(provider: 'instagram'), class: 'btn btn-block btn-social btn-instagram'
         = link_to t('social.google').html_safe, user_omniauth_upgrade_path(provider: 'google_Oauth2'), class: 'btn btn-block btn-social btn-google'
+        = link_to t('social.instagram').html_safe, user_omniauth_upgrade_path(provider: 'instagram'), class: 'btn btn-block btn-social btn-instagram'
         = link_to t('social.pinterest').html_safe, user_omniauth_upgrade_path(provider: 'pinterest'), class: 'btn btn-block btn-social btn-pinterest'
+        = link_to t('social.twitter').html_safe, user_omniauth_upgrade_path(provider: 'twitter'), class: 'btn btn-block btn-social btn-twitter'

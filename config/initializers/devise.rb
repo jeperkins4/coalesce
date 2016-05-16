@@ -292,6 +292,7 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], scope: 'email', setup: true
   config.omniauth :twitter, ENV['TWITTER_APP_ID'], ENV['TWITTER_APP_SECRET'], setup: true
+  config.omniauth :evernote, ENV['EVERNOTE_KEY'], ENV['EVERNOTE_SECRET'], :client_options => { :site => ENV['EVERNOTE_URL'] }, setup: true
   config.omniauth :google_Oauth2, ENV['GOOGLE_OAUTH2_APP_ID'], ENV['GOOGLE_OAUTH2_APP_SECRET'], setup: true
   #config.omniauth :instagram, 'JCKxtTZNfa3l7Gms2ak1TZZvu', 'u1d2onf5hiAshNtFuKkUHvmiVFzBr9ZO7ppqlY587LYPF6IESd', setup: true
   config.omniauth :pinterest, ENV['PINTEREST_APP_ID'], ENV['PINTEREST_APP_SECRET'], setup: true
