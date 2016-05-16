@@ -14,9 +14,8 @@ class PollTwitter
     end
 
     Project.all.each do |project|
-      byebug
       client.search("#{project.hashtag} -rt").each do |tweet|
-        message = Message.find_or_create_by(text: tweet.text, nickname: tweet.user.screen_name, provider: 'twitter')
+        message = Message.find_or_create_by(text: tweet.text, nickname: tweet.user.screen_name, provider: 'twitter', project_id: project.id)
         if identity.nickname == tweet.user.screen_name
           message.identity_id = identity.id
           message.save if message.changed?
