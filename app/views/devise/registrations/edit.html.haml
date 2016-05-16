@@ -37,6 +37,7 @@
       .panel-heading
         %h5 Social Media Identities
       .panel-body
+        = link_to t('social.asana').html_safe, user_omniauth_upgrade_path(provider: 'asana'), class: 'btn btn-block btn-social btn-asana'
         = link_to t('social.evernote').html_safe, user_omniauth_upgrade_path(provider: 'evernote'), class: 'btn btn-block btn-social btn-evernote'
         = link_to t('social.facebook').html_safe, user_omniauth_upgrade_path(provider: 'facebook'), class: 'btn btn-block btn-social btn-facebook'
         = link_to t('social.google').html_safe, user_omniauth_upgrade_path(provider: 'google_Oauth2'), class: 'btn btn-block btn-social btn-google'

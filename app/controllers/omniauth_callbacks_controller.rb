@@ -13,6 +13,10 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     render :text => "Setup complete.", :status => 404
   end
 
+  def asana
+    generic_callback( 'asana' )
+  end
+
   def instagram
     generic_callback( 'instagram' )
   end
