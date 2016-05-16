@@ -12,6 +12,14 @@ module SocialAuth
       @twitter_client ||= Twitter.client( access_token: twitter.accesstoken )
     end
 
+    def evernote
+      identities.where( :provider => "evernote" ).first
+    end
+
+    def evernote_client
+      @evernote_client ||= Evernote.client( access_token: evernote.accesstoken )
+    end
+
     def facebook
       identities.where( :provider => "facebook" ).first
     end

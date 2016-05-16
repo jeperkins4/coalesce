@@ -17,6 +17,10 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     generic_callback( 'instagram' )
   end
 
+  def evernote
+    generic_callback( 'evernote' )
+  end
+
   def facebook
     generic_callback( 'facebook' )
   end
