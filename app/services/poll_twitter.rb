@@ -22,5 +22,7 @@ class PollTwitter
         end
       end
     end
+  rescue => e
+    puts e.message
   end
 end
