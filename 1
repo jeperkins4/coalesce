@@ -5,6 +5,8 @@
     %br
 / /.row
 / Project One
+- byebug
+- projects = projects.page(params[:page])
 - projects.each do |project|
   - sample = project.documents.sample
   .row
@@ -27,7 +29,23 @@
 / Pagination
 .row.text-center
   .col-lg-12
-    = paginate projects, theme: 'twitter-bootstrap-3'
+    = paginate projects
+    %ul.pagination
+      %li
+        %a{:href => "#"} «
+      %li.active
+        %a{:href => "#"} 1
+      %li
+        %a{:href => "#"} 2
+      %li
+        %a{:href => "#"} 3
+      %li
+        %a{:href => "#"} 4
+      %li
+        %a{:href => "#"} 5
+      %li
+        %a{:href => "#"} »
+/ /.row
 %hr/
 / Footer
 %footer

@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.3.0'
+ruby '2.3.1'
 
-gem 'rails', '~> 4.2.6' #'>= 5.0.0.rc1', github: 'rails/rails' #'< 5.1'
+gem 'rails', '5.0.0.rc1' #, github: 'rails/rails' #'< 5.1'
 gem 'sprockets'
 #gem 'sprockets-rails', github: "rails/sprocket-rails"
 # Use sqlite3 as the database for Active Record
@@ -42,7 +42,7 @@ gem 'bootstrap-daterangepicker-rails'
 gem "bootstrap-sass"
 gem 'bootstrap-social-rails'
 gem 'bootstrap-datepicker-rails'
-gem 'bootstrap-timepicker-rails-addon', '~> 0.5.1'
+gem 'bootstrap-timepicker-rails-addon' #, '~> 0.5.1'
 gem 'bootstrap3_autocomplete_input'
 gem 'cancancan'
 gem 'carrierwave-aws'
@@ -58,7 +58,8 @@ gem 'font-awesome-rails'
 gem 'geocoder'
 gem 'haml-rails'
 gem 'high_voltage'
-gem "kaminari"
+gem "kaminari", github: 'amatsuda/kaminari', branch: '0-17-stable'
+gem 'bootstrap-kaminari-views'
 gem "koala"
 gem 'mail_view', github: 'basecamp/mail_view'
 gem 'memoizable'
@@ -74,6 +75,7 @@ gem 'omniauth-twitter'
 gem "omniauth-google-oauth2"
 gem 'pg'
 gem 'puma'
+gem 'restforce'
 gem 'rolify'
 gem 'sendgrid'
 gem 'simple_form'

@@ -14,7 +14,7 @@
 //= require underscore
 //= require moment
 //= require daterangepicker
-//= require_tree
+//= require_tree .
 //= require_self
 
 $ ->
